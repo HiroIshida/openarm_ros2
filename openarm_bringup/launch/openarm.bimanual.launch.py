@@ -159,7 +159,7 @@ def generate_launch_description():
         ),
         DeclareLaunchArgument(
             "robot_controller",
-            default_value="joint_trajectory_controller",
+            default_value="forward_position_controller",
             choices=["forward_position_controller",
                      "joint_trajectory_controller"],
             description="Robot controller to start.",
@@ -225,6 +225,13 @@ def generate_launch_description():
         name="rviz2",
         output="log",
         arguments=["-d", rviz_config_file],
+    )
+
+    usb_cam_node = Node(
+        package='usb_cam',
+        executable='usb_cam_node_exe',
+        name='usb_cam',
+        output='screen',
     )
 
     # Joint state broadcaster spawner

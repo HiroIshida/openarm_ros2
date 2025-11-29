@@ -123,7 +123,7 @@ def generate_launch_description():
         ),
         DeclareLaunchArgument(
             "robot_controller",
-            default_value="joint_trajectory_controller",
+            default_value="forward_position_controller",
             choices=["forward_position_controller",
                      "joint_trajectory_controller"],
             description="Robot controller to start.",
